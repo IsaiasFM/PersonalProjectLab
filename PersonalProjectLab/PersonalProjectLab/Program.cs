@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PersonalProjectLab
 {
@@ -8,6 +9,8 @@ namespace PersonalProjectLab
         {
             int continueProcess = 0;
             List<string> groceryList = new List<string>();
+            groceryList.Add("Gocery List");
+            int[] itemPrice = new int[1];
 
             while (continueProcess != 0)
             {
@@ -15,22 +18,36 @@ namespace PersonalProjectLab
 
                 if (continueProcess == 1)
                 {
+                    //Adding an item to List
+                    Console.WriteLine("Please enter the name of item.");
+
+                    string userInput = Console.ReadLine();
+
+                    groceryList.Add(userInput);
+
+                    Console.WriteLine("Please enter the price of item.");
+
+                    int
+
                     groceryList.Add(Console.ReadLine());
                 }
 
                 else if (continueProcess == 2)
                 {
-
+                    // Editing an item in List
+                    groceryList.Add(Console.ReadLine());
                 }
 
                 else if (continueProcess == 3)
                 {
-
+                    // Deleting an item from List
+                    groceryList.Add(Console.ReadLine());
                 }
 
                 else if (continueProcess == 4)
                 {
-
+                    //Printing off List
+                    groceryList.Add(Console.ReadLine());
                 }
 
             }
