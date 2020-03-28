@@ -5,12 +5,12 @@ namespace PersonalProjectLab
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            int continueProcess = 0;
             List<string> groceryList = new List<string>();
-            groceryList.Add("Gocery List");
-            int[] itemPrice = new int[1];
+            List<int> ItemPrice = new List<int>();
+            int continueProcess = 1;
 
             while (continueProcess != 0)
             {
@@ -20,16 +20,14 @@ namespace PersonalProjectLab
                 {
                     //Adding an item to List
                     Console.WriteLine("Please enter the name of item.");
-
                     string userInput = Console.ReadLine();
 
                     groceryList.Add(userInput);
 
                     Console.WriteLine("Please enter the price of item.");
+                    int Price = int.Parse(Console.ReadLine());
 
-                    int
-
-                    groceryList.Add(Console.ReadLine());
+                    ItemPrice.Add(Price);
                 }
 
                 else if (continueProcess == 2)
@@ -68,9 +66,14 @@ namespace PersonalProjectLab
             return chosenOption;
         }
 
-        public static void Printlist()
+        public void Printlist()
         {
+            Console.WriteLine("Grocery List");
 
+            for (int i = 0; i < groceryList.Count; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + groceryList[i - 1]);
+            }
         }
     }
 }
