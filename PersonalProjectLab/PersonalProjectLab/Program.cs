@@ -8,9 +8,15 @@ namespace PersonalProjectLab
 
         static void Main(string[] args)
         {
-            List<string> groceryList = new List<string>();
-            List<int> ItemPrice = new List<int>();
+            MyGroceryList myList = new MyGroceryList();
             int continueProcess = 1;
+            string stringInput;
+            int intInput;
+
+
+            Console.WriteLine("Hello! What is your name?");
+            stringInput = Console.ReadLine();
+            myList.PersonName(stringInput);
 
             while (continueProcess != 0)
             {
@@ -21,60 +27,30 @@ namespace PersonalProjectLab
                 {
                     //Adding an item to List
                     Console.WriteLine("Please enter the name of item.");
-                    string userInput = Console.ReadLine();
-
-                    groceryList.Add(userInput);
+                    stringInput = Console.ReadLine();
 
                     Console.WriteLine("Please enter the price of item.");
-                    int Price = int.Parse(Console.ReadLine());
+                    intInput = int.Parse(Console.ReadLine());
 
-                    ItemPrice.Add(Price);
+                    myList.AddToList(stringInput, intInput);
                 }
-
+         
                 else if (continueProcess == 2)
                 {
-                    // Editing an item in List
-                    for (int i = 0; i < groceryList.Count; i++)
-                    {
-                        int j = 1 + i;
+                    // Deleting an item from List
+                    Console.WriteLine("Please enter the item number you would like to delete?");
 
-                        Console.WriteLine(j + ". " + groceryList[i]);
-                    }
+                    myList.PrintList();
 
-                    Console.WriteLine("Which item would you like to edit? Please enter number.");
-                    int itemChoice = int.Parse(Console.ReadLine());
+                    intInput = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Rename Item? 1 - Yes, 2 - No");
-
-                    int userInput = int.Parse(Console.ReadLine());
-                    
-
-                    if (userInput == 1)
-                    {
-                        Console.WriteLine("Please enter the name of item.");
-                        string itemName = Console.ReadLine();
-
-                        groceryList.(itemName);
-                    }
+                    myList.DeleteFromList(intInput);
                 }
 
                 else if (continueProcess == 3)
                 {
-                    // Deleting an item from List
-                    groceryList.Add(Console.ReadLine());
-                }
+                    //Printing off List with total price
 
-                else if (continueProcess == 4)
-                {
-                    //Printing off List
-
-                    Console.WriteLine("Grocery List");
-                    Console.WriteLine();
-
-                    for (int i = 0; i < groceryList.Count; i++)
-                    {
-                        Console.WriteLine(groceryList[i] + " $" + ItemPrice[i]);
-                    }
                 }
                 Console.WriteLine();
             }
@@ -86,9 +62,8 @@ namespace PersonalProjectLab
             int chosenOption;
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1 - Add item");
-            Console.WriteLine("2 - Edit item");
-            Console.WriteLine("3 - Delete item");
-            Console.WriteLine("4 - Print List");
+            Console.WriteLine("2 - Delete item");
+            Console.WriteLine("3 - Print List");
             Console.WriteLine("0 - Exit");
 
             chosenOption = int.Parse(Console.ReadLine());
