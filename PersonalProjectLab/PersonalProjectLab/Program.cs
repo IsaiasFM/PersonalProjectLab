@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-
 namespace PersonalProjectLab
 {
     class Program
@@ -50,7 +48,9 @@ namespace PersonalProjectLab
                 else if (continueProcess == 3)
                 {
                     //Printing off List with total price
+                    myList.PrintList();
 
+                    Console.WriteLine("Total Price: $" + myList.TotalPrice());
                 }
                 Console.WriteLine();
             }

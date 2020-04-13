@@ -37,10 +37,20 @@ namespace PersonalProjectLab
             for (int i = 0; i < groceryList.Count; i++)
             {
                 int j = i + 1;
-                Console.WriteLine(j + ". " + groceryList[i] + " " + itemPrice[i]);
+                Console.WriteLine(j + ". " + groceryList[i] + " $" + itemPrice[i]);
             }
         }
 
+        public int TotalPrice()
+        {
+            int totalPrice = 0;
 
+            for (int i = 0; i < itemPrice.Count; i++)
+            {
+                totalPrice += itemPrice[0];
+            }
+
+            return totalPrice;
+        }
     }
 }
