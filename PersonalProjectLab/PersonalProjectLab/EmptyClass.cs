@@ -5,21 +5,21 @@ namespace PersonalProjectLab
 {
     public class MyGroceryList
     {
-        string Name;
+        string _Name;
         List<string> groceryList = new List<string>();
-        List<int> itemPrice = new List<int>();
+        List<decimal> itemPrice = new List<decimal>();
 
         public MyGroceryList()
         {
-            Name = "unknown";
+            _Name = "unknown";
         }
 
         public void PersonName(string name)
         {
-            Name = name;
+            _Name = name;
         }
 
-        public void AddToList(string item, int price)
+        public void AddToList(string item, decimal price)
         {
             groceryList.Add(item);
             itemPrice.Add(price);
@@ -34,6 +34,8 @@ namespace PersonalProjectLab
 
         public void PrintList()
         {
+            Console.WriteLine(_Name + "'s List");
+
             for (int i = 0; i < groceryList.Count; i++)
             {
                 int j = i + 1;
@@ -41,13 +43,13 @@ namespace PersonalProjectLab
             }
         }
 
-        public int TotalPrice()
+        public decimal TotalPrice()
         {
-            int totalPrice = 0;
+            decimal totalPrice = 0;
 
             for (int i = 0; i < itemPrice.Count; i++)
             {
-                totalPrice += itemPrice[0];
+                totalPrice += itemPrice[i];
             }
 
             return totalPrice;

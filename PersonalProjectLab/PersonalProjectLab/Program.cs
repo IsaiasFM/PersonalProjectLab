@@ -6,10 +6,10 @@ namespace PersonalProjectLab
 
         static void Main(string[] args)
         {
-            MyGroceryList myList = new MyGroceryList();
+            MyShoppingList myList = new MyShoppingList();
             int continueProcess = 1;
             string stringInput;
-            int intInput;
+            decimal intInput;
 
 
             Console.WriteLine("Hello! What is your name?");
@@ -26,9 +26,10 @@ namespace PersonalProjectLab
                     //Adding an item to List
                     Console.WriteLine("Please enter the name of item.");
                     stringInput = Console.ReadLine();
+                    stringInput = char.ToUpper(stringInput[0]) + stringInput.Substring(1);
 
                     Console.WriteLine("Please enter the price of item.");
-                    intInput = int.Parse(Console.ReadLine());
+                    intInput = decimal.Parse(Console.ReadLine());
 
                     myList.AddToList(stringInput, intInput);
                 }
@@ -40,9 +41,9 @@ namespace PersonalProjectLab
 
                     myList.PrintList();
 
-                    intInput = int.Parse(Console.ReadLine());
+                    int userChoice = int.Parse(Console.ReadLine());
 
-                    myList.DeleteFromList(intInput);
+                    myList.DeleteFromList(userChoice);
                 }
 
                 else if (continueProcess == 3)
