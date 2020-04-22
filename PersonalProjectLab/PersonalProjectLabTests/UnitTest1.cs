@@ -9,7 +9,7 @@ namespace PersonalProjectLabTests
         [TestMethod]
         public void TotalListPrice()
         {
-            MyGroceryList engine = new MyGroceryList();
+            MyShoppingList engine = new MyShoppingList();
 
             engine.AddToList("Apple", 1.99m);
             engine.AddToList("Orange", 1.89m);

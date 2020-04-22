@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace PersonalProjectLab
 {
-    public class MyGroceryList
+    public class MyShoppingList
     {
         string _Name;
-        List<string> groceryList = new List<string>();
+        List<string> ShoppingList = new List<string>();
         List<decimal> itemPrice = new List<decimal>();
 
-        public MyGroceryList()
+        public MyShoppingList()
         {
             _Name = "unknown";
         }
@@ -21,14 +21,14 @@ namespace PersonalProjectLab
 
         public void AddToList(string item, decimal price)
         {
-            groceryList.Add(item);
+            ShoppingList.Add(item);
             itemPrice.Add(price);
         }
 
         public void DeleteFromList(int number)
         {
             number -= 1;
-            groceryList.RemoveAt(number);
+            ShoppingList.RemoveAt(number);
             itemPrice.RemoveAt(number);
         }
 
@@ -36,10 +36,10 @@ namespace PersonalProjectLab
         {
             Console.WriteLine(_Name + "'s List");
 
-            for (int i = 0; i < groceryList.Count; i++)
+            for (int i = 0; i < ShoppingList.Count; i++)
             {
                 int j = i + 1;
-                Console.WriteLine(j + ". " + groceryList[i] + " $" + itemPrice[i]);
+                Console.WriteLine(j + ". " + ShoppingList[i] + " $" + itemPrice[i]);
             }
         }
 
